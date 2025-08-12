@@ -21,3 +21,14 @@ Install pytest if needed and run:
 ```
 pytest
 ```
+
+## Deployment with Docker
+
+Build an image and run the POS inside a container:
+
+```
+docker build -t simplepos .
+docker run -it --rm -v $(pwd)/pos.db:/app/pos.db simplepos
+```
+
+The volume mount keeps `pos.db` on the host so data persists between runs.
